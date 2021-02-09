@@ -1,13 +1,24 @@
 <template>
-  <h1>{{ title }}</h1>
+  <div class="form">
+    <h1>{{ title }}</h1>
+    <input type="text" ref="name">
+    <button v-on:click="handleClick">click me</button>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'App',
+  name: "App",
   data() {
     return {
-      title: 'My vue app'
+      title: "My vue app"
+    };
+  },
+  methods: {
+    handleClick() {
+      console.log(this.$refs.name)
+      this.$refs.name.classList.add('active')
+      this.$refs.name.focus()
     }
   }
 }
@@ -20,6 +31,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e40;
+  margin-top: 60px;
 }
 
 h1 {
