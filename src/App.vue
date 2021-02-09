@@ -3,7 +3,7 @@
     <h1>{{ title }}</h1>
     <input type="text" ref="name">
     <button v-on:click="handleClick">click me</button>
-    <Modal />
+    <Modal :header="header" :text="text" theme='sale'/>
   </div>
 </template>
 
@@ -15,7 +15,9 @@ export default {
   components: { Modal },
   data() {
     return {
-      title: "My vue app"
+      title: "My vue app",
+      header: "Good job!",
+      text: "Now drink some watter! :D"
     };
   },
   methods: {
@@ -40,7 +42,8 @@ export default {
 
 h1 {
   border-bottom: 1px solid #ddd;
-  display: inline-block;
+  display: block;
   padding-bottom: 10px;
+  text-align: center;
 }
 </style>
