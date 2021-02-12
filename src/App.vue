@@ -3,7 +3,12 @@
     <h1>{{ title }}</h1>
     <input type="text" ref="name">
     <button v-on:click="handleClick">click me</button>
-    <Modal :header="header" :text="text" theme='sale'/>
+    <div v-if="showModal">
+      <Modal :header="header" :text="text" theme='sale'/>
+    </div>
+    <br>
+    <br>
+    <button @click="toggleModal">Modal toggle :D</button>
   </div>
 </template>
 
@@ -17,7 +22,8 @@ export default {
     return {
       title: "My vue app",
       header: "Good job!",
-      text: "Now drink some watter! :D"
+      text: "Now drink some watter! :D",
+      showModal: false
     };
   },
   methods: {
@@ -25,6 +31,9 @@ export default {
       console.log(this.$refs.name)
       this.$refs.name.classList.add('active')
       this.$refs.name.focus()
+    },
+    toggleModal() {
+      this.showModal = !this.showModal
     }
   }
 }
