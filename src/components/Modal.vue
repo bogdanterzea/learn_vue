@@ -3,6 +3,7 @@
         <div class="modal" :class="{sale: theme === 'sale'}">
             <h1>{{ header }}</h1>
             <p>{{ text }}</p>
+            <slot name="links"></slot>
         </div>
     </div>
 </template>

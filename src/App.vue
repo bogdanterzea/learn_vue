@@ -4,7 +4,12 @@
     <input type="text" ref="name">
     <button v-on:click="handleClick">click me</button>
     <div v-if="showModal">
-      <Modal :header="header" :text="text" theme='sale' @close="toggleModal" />
+      <Modal :header="header" :text="text" theme='sale' @close="toggleModal" >
+        <template v-slot:links> 
+          <a href="#">Sign up</a>
+          <a href="#">Details</a>
+        </template>
+      </Modal>
     </div>
     <br>
     <br>
