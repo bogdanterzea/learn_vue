@@ -5,10 +5,11 @@
     <button v-on:click="handleClick">click me</button>
     <div v-if="showModal">
       <Modal :header="header" :text="text" theme='sale' @close="toggleModal" >
-        <!-- <template v-slot:links> 
+        <h1>Big Title</h1>
+        <template v-slot:links> 
           <a href="#">Sign up</a>
           <a href="#">Details</a>
-        </template> -->
+        </template>
       </Modal>
     </div>
     <br>

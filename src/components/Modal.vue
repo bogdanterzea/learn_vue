@@ -1,10 +1,12 @@
 <template>
     <div class="backdrop" @click.self="closeModal">
         <div class="modal" :class="{sale: theme === 'sale'}">
-            <h1>{{ header }}</h1>
+            <h2>{{ header }}</h2>
             <p>{{ text }}</p>
             <slot>Fallback slot here :D</slot>
-            <slot name="links"></slot>
+            <div class="actions">
+                <slot name="links"></slot>
+            </div>
         </div>
     </div>
 </template>
@@ -47,6 +49,18 @@ export default {
     }
     .modal.sale h1 {
         color: white;
+    }
+    .modal .actions {
+        text-align: center;
+        margin: 30px 0 10px 0
+    }
+    .modal .actions a {
+        color: #333;
+        padding: 8px;
+        border: 1px solid #eee;
+        border-radius: 4px;
+        text-decoration: none;
+        margin: 10px;
     }
     
 </style>
