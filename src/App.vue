@@ -12,9 +12,20 @@
         </template>
       </Modal>
     </div>
+    <div v-if="showModalEat">
+      <Modal :titleEat="foodTitle" :headerEat="foodHeader" @close="toggleModalEat">
+        <h1>Welcome aboard!</h1>
+        <template v-slot:links>
+          <h2>Grab a sandwitch</h2>
+          <a href="https://www.subway.com/en-us">FOOD HERE!</a>
+          <a href="https://www.bk.com/">FOOD HERE2!</a>
+        </template>
+      </Modal>
+    </div>
     <br>
     <br>
     <button @click="toggleModal">Modal toggle :D</button>
+    <button @click="toggleModalEat">FOOD HERE FAT MAN!</button>
   </div>
 </template>
 
@@ -29,7 +40,10 @@ export default {
       title: "My vue app",
       header: "Good job!",
       text: "Now drink some watter! :D",
-      showModal: false
+      foodTitle: "Grab a sandwitch",
+      foodHeader: "Don't forget the ketchup!!",
+      showModal: false,
+      showModalEat: false,
     };
   },
   methods: {
@@ -40,6 +54,9 @@ export default {
     },
     toggleModal() {
       this.showModal = !this.showModal
+    },
+    toggleModalEat() {
+      this.showModalEat = !this.showModalEat
     }
   }
 }
