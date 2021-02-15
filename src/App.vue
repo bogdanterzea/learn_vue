@@ -5,10 +5,10 @@
     <button v-on:click="handleClick">click me</button>
     <div v-if="showModal">
       <Modal :header="header" :text="text" theme='sale' @close="toggleModal" >
-        <template v-slot:links> 
+        <!-- <template v-slot:links> 
           <a href="#">Sign up</a>
           <a href="#">Details</a>
-        </template>
+        </template> -->
       </Modal>
     </div>
     <br>
@@ -23,7 +23,7 @@ import Modal from './components/Modal.vue'
 export default {
   name: "App",
   components: { Modal },
-  data() {
+  data() { 
     return {
       title: "My vue app",
       header: "Good job!",
